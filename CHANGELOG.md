@@ -948,3 +948,6 @@ Add any new changes to the top(right below this line).
 
 - Role: all
   - Removed the unused task timing callback plugin.
+
+- Role: edxapp
+  - Added COURSE_CATALOG_URL_ROOT that contains root url of course catalog service (discovery service).
