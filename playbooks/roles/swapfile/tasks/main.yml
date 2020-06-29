@@ -18,10 +18,6 @@
   register: create_swapfile
   when: SWAPFILE_SIZE != false and write_swapfile.changed
 
-- name: Enable swapfile
-  command: swapon {{ SWAPFILE_LOCATION }}
-  when: SWAPFILE_SIZE != false and create_swapfile.changed
-
 - name: Add swapfile to /etc/fstab
   mount: name=none src="{{ SWAPFILE_LOCATION }}" fstype=swap opts=sw passno=0 dump=0 state=present
   when: SWAPFILE_SIZE != false
